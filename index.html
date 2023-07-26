@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <title>TaskMaster</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   </head>
   <body>
     <div class="container">
       <h1 class="text-center my-4">TaskMaster</h1>
       <div class="input-group mb-3">
-        <input id="taskInput" type="text" class="form-control" placeholder="New Task">
+        <input id="taskInput" type="text" class="form-control form-control-lg" placeholder="New Task">
         <select id="categorySelect" class="custom-select">
           <option value="Personal">Personal</option>
           <option value="Work">Work</option>
@@ -23,7 +22,7 @@
         </select>
         <input id="dueDateInput" type="date" class="form-control">
         <div class="input-group-append">
-          <button id="addTaskButton" class="btn btn-outline-primary">Add Task</button>
+          <button id="addTaskButton" class="btn btn-primary">Add Task</button>
         </div>
       </div>
       <div class="btn-group mb-3" role="group">
@@ -34,7 +33,7 @@
         <button id="sortByDueDateButton" class="btn btn-outline-secondary">Sort By Due Date</button>
         <button id="sortByPriorityButton" class="btn btn-outline-secondary">Sort By Priority</button>
       </div>
-      <ul id="taskList" class="list-group"></ul>
+      <ul id="taskList" class="task-list"></ul>
     </div>
     <script src="renderer.js"></script>
   </body>

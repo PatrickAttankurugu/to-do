@@ -16,9 +16,6 @@ $ cd to-do
 # I WILL APPRECIATE THIS
 Your feedback on how to improve this project is highly welcome. Also, if you're a beginner, feel free to clone this project and try it out. Let me know if you think I can be of help to you. 
 
-## ACKNOWLEDGEMENT
-I would like to express my gratitude to OpenAI for the knowledge I've gained in the course of this project.
-
 ## Author
  **Patrick Attankurugu** 
 

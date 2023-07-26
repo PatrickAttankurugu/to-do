@@ -1,37 +1,149 @@
 body {
-    background-color: #f5f5f5;
-  }
-  
-  .container {
+    background-color: #F5F5F5;
+    font-family: Arial, sans-serif;
+}
+
+.container {
     max-width: 600px;
     margin: 50px auto;
-  }
-  
-  input, select, button {
-    margin-top: 10px;
-  }
-  
-  .task {
-    margin-top: 20px;
-    background-color: white;
     padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
-  
-  .task .task-name {
-    font-weight: bold;
-  }
-  
-  .task .task-category, .task .task-priority, .task .task-dueDate {
-    margin-right: 20px;
-  }
-  
-  .task .task-done {
-    float: right;
-  }
-  
-  .done {
-    text-decoration: line-through;
-  }
-  
+}
+h1.text-center.my-4 {
+    text-align: center;
+    color: #666666; /* Changes the text color to a deep blue. */
+    font-size: 2.5em; /* Increases the font size. */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Gives the text a slight shadow, making it pop out from the background. */
+    margin-bottom: 40px !important; /* Increases the space between the heading and the elements below it. */
+}
+
+
+h1.text-center {
+    color: #333;
+    margin-bottom: 40px;
+}
+
+body {
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.1);
+    background-color: white;
+    border-radius: 5px;
+}
+
+.input-group.mb-3 {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-radius: 5px;
+}
+
+.input-group.mb-3 .form-control, .input-group.mb-3 .custom-select {
+    height: 35px;
+    border-radius: 0;
+    border: none;
+    font-size: 14px;
+}
+
+.input-group.mb-3 .btn {
+    height: 35px;
+    border-radius: 0;
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.input-group.mb-3 .btn:hover {
+    background-color: #ff9900;
+}
+
+.btn-group.mb-3 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn-group.mb-3 .btn {
+    flex: 1;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #6c757d;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.btn-group.mb-3 .btn:last-child {
+    margin-right: 0;
+}
+
+.btn-group.mb-3 .btn:hover {
+    background-color: #5a6268;
+}
+
+
+
+
+.task-list {
+    list-style: none;
+    padding: 0;
+}
+
+.task-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 15px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+}
+
+.task-list li span {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.task-list li button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.task-list li button.complete {
+    color: #ffffff;
+    background-color: #28a745;
+}
+
+.task-list li button.complete:hover {
+    background-color: #1e7e34;
+}
+
+.task-list li button.edit {
+    color: #ffffff;
+    background-color: #ffc107;
+}
+
+.task-list li button.edit:hover {
+    background-color: #d39e00;
+}
+
+.task-list li button.delete {
+    color: #ffffff;
+    background-color: #dc3545;
+}
+
+.task-list li button.delete:hover {
+    background-color: #bd2130;
+}
