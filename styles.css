@@ -1,0 +1,37 @@
+body {
+    background-color: #f5f5f5;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 50px auto;
+  }
+  
+  input, select, button {
+    margin-top: 10px;
+  }
+  
+  .task {
+    margin-top: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .task .task-name {
+    font-weight: bold;
+  }
+  
+  .task .task-category, .task .task-priority, .task .task-dueDate {
+    margin-right: 20px;
+  }
+  
+  .task .task-done {
+    float: right;
+  }
+  
+  .done {
+    text-decoration: line-through;
+  }
+  
