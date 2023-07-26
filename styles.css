@@ -147,3 +147,11 @@ body {
 .task-list li button.delete:hover {
     background-color: #bd2130;
 }
+.task-list li.in-progress {
+    background-color: #f9eb86; /* Light yellow to indicate the task is still in progress */
+}
+
+.task-list li.completed {
+    background-color: #98fb98; /* Pale green to indicate the task has been completed */
+}
+

@@ -13,6 +13,12 @@ let sortByPriorityButton = document.getElementById('sortByPriorityButton');
 let filter = 'all';
 let sort = 'none';
 
+// Error handling logic
+ipcRenderer.on('error', (event, error) => {
+  console.error("An error occurred: ", error);
+  // You can add additional error handling logic here. For example, display the error to the user, or write it to a log file.
+});
+
 function filterTasks(tasks) {
   switch(filter) {
     case 'all':
@@ -46,6 +52,7 @@ function updateTaskList(tasks) {
   taskList.innerHTML = '';
   sortedTasks.forEach((task, index) => {
     let listItem = document.createElement('li');
+    listItem.classList.add(task.completed ? 'completed' : 'in-progress');
     listItem.innerHTML = `${task.completed ? '<s>' : ''}${task.name} (${task.category}, ${task.priority} priority, Due: ${task.dueDate})${task.completed ? '</s>' : ''} 
     <button class="complete" data-index="${index}">Complete</button> 
     <button class="edit" data-index="${index}">Edit</button>
@@ -53,6 +60,7 @@ function updateTaskList(tasks) {
     taskList.appendChild(listItem);
   });
 }
+
 
 let originalAddTaskButtonOnclick = addTaskButton.onclick = () => {
   ipcRenderer.send('add-task', { 
@@ -62,8 +70,12 @@ let originalAddTaskButtonOnclick = addTaskButton.onclick = () => {
     dueDate: dueDateInput.value 
   });
   taskInput.value = '';
-  ipcRenderer.send('get-tasks');  // Add this line
+  let myNotification = new Notification('Task Manager', {
+    body: 'Task has been added'
+  });
+  ipcRenderer.send('get-tasks');
 };
+
 
 sortByNameButton.onclick = () => {
   sort = 'name';
@@ -80,18 +92,26 @@ sortByPriorityButton.onclick = () => {
   ipcRenderer.send('get-tasks');
 };
 
+
+
 taskList.onclick = (event) => {
   if (event.target.classList.contains('delete')) {
     let index = event.target.getAttribute('data-index');
     ipcRenderer.send('delete-task', index);
+    // Consider adding a notification here as well.
   } else if (event.target.classList.contains('complete')) {
     let index = event.target.getAttribute('data-index');
     ipcRenderer.send('complete-task', index);
+    let myNotification = new Notification('Task Manager', {
+      body: 'Task has been completed'
+    });
   } else if (event.target.classList.contains('edit')) {
     let index = event.target.getAttribute('data-index');
     ipcRenderer.send('edit-task', index);
+    // Consider adding a notification here as well.
   }
 };
+
 
 window.onload = () => {
   ipcRenderer.send('get-tasks');
@@ -115,6 +135,9 @@ ipcRenderer.on('edit-task', (event, task) => {
       completed: task.completed 
     });
     taskInput.value = '';
+    let myNotification = new Notification('Task Manager', {
+      body: 'Task has been updated'
+    });
     addTaskButton.onclick = originalAddTaskButtonOnclick;
   };
 });
