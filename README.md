@@ -1,6 +1,6 @@
 # TO-DO LIST DESKTOP APPLICATION
 
-![To Do](to-do.PNG)
+![To Do](to-do.png)
 
 
 ## PROJECT DESCRIPTION
