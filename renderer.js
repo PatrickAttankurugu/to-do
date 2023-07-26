@@ -10,6 +10,8 @@ let sortByNameButton = document.getElementById('sortByNameButton');
 let sortByDueDateButton = document.getElementById('sortByDueDateButton');
 let sortByPriorityButton = document.getElementById('sortByPriorityButton');
 
+
+
 let filter = 'all';
 let sort = 'none';
 
